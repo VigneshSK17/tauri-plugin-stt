@@ -199,7 +199,7 @@ impl<R: Runtime> Stt<R> {
             let response = client
                 .get(&url_owned)
                 .send()
-                .map_err(|e| format!("Failed to download model from {}: {}", url_owned, e))?;
+                .map_err(|e| format!("Failed to download model from {}: {:?}", url_owned, e))?;
 
             let status = response.status();
 
