@@ -12,59 +12,13 @@ use vosk::{Model, Recognizer};
 use crate::models::*;
 
 /// Default Vosk model configuration
-const DEFAULT_MODEL_NAME: &str = "vosk-model-en-us-0.42-gigaspeech";
+const DEFAULT_MODEL_NAME: &str = "vosk-model-en-us-0.22-lgraph";
 const DEFAULT_MODEL_URL: &str =
-    "https://alphacephei.com/vosk/models/vosk-model-en-us-0.42-gigaspeech.zip";
+    "https://huggingface.co/VigneshSK17/vosk-model-en-us-0.22-lgraph/resolve/main/vosk-model-en-us-0.22-lgraph.zip";
 
 /// Available Vosk models with their download URLs
 /// Using high-accuracy models for better transcription quality
-const AVAILABLE_MODELS: &[(&str, &str, &str)] = &[
-    (
-        "en-US",
-        "vosk-model-en-us-0.42-gigaspeech",
-        "https://alphacephei.com/vosk/models/vosk-model-en-us-0.42-gigaspeech.zip",
-    ),
-    (
-        "pt-BR",
-        "vosk-model-pt-fb-v0.1.1-20220516_2113",
-        "https://alphacephei.com/vosk/models/vosk-model-pt-fb-v0.1.1-20220516_2113.zip",
-    ),
-    (
-        "es-ES",
-        "vosk-model-es-0.42",
-        "https://alphacephei.com/vosk/models/vosk-model-es-0.42.zip",
-    ),
-    (
-        "fr-FR",
-        "vosk-model-fr-0.22",
-        "https://alphacephei.com/vosk/models/vosk-model-fr-0.22.zip",
-    ),
-    (
-        "de-DE",
-        "vosk-model-de-0.21",
-        "https://alphacephei.com/vosk/models/vosk-model-de-0.21.zip",
-    ),
-    (
-        "ru-RU",
-        "vosk-model-ru-0.42",
-        "https://alphacephei.com/vosk/models/vosk-model-ru-0.42.zip",
-    ),
-    (
-        "zh-CN",
-        "vosk-model-cn-0.22",
-        "https://alphacephei.com/vosk/models/vosk-model-cn-0.22.zip",
-    ),
-    (
-        "ja-JP",
-        "vosk-model-ja-0.22",
-        "https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip",
-    ),
-    (
-        "it-IT",
-        "vosk-model-it-0.22",
-        "https://alphacephei.com/vosk/models/vosk-model-it-0.22.zip",
-    ),
-];
+const AVAILABLE_MODELS: &[(&str, &str, &str)] = &[("en-US", DEFAULT_MODEL_NAME, DEFAULT_MODEL_URL)];
 
 use std::sync::atomic::{AtomicU64, Ordering};
 
